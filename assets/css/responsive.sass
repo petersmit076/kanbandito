@@ -1,0 +1,390 @@
+@import "arrays.sass"
+
+/* =================================
+/* Mobile - Phone portrait - iPhone 6 Plus max
+/* =================================
+@media screen and (max-width: 480px)
+  /* Header
+  /* ==================================
+  body
+    .modal-backdrop
+      width: 100%
+      background-color: rgba(0,0,0,.3)
+  #navigation-bar
+    padding: 0 0 0 70px
+    .logo
+      width: 70px !important
+      min-width: auto
+      height: 58px
+      padding: 17px 15px
+      .logo-text
+      img.logo-view
+        width: 100%
+    form.search-bar
+      position: absolute
+      &:before
+        z-index: 3
+      #search-bar
+        padding: 19px 0 19px 54px
+        width: 58px
+      input
+        &::-webkit-input-placeholder
+        &:focus, &:active
+          width: calc(100vw - 70px) !important
+          background-color: #6c84cd !important
+          position: relative
+          z-index: 2
+    ul.right-navigation
+      position: relative
+      z-index: 1
+      li
+        &:nth-child(1)
+        a
+          &:hover
+          i.fa
+          span
+        &:nth-child(2)
+      li.profile-menu
+        padding: 0 10px
+        display: inline-flex
+        .profile-pic
+          bottom: 9px
+          margin-left: 0
+
+  /* Sidebar
+  /* ==================================
+  #mobile-navigation.show
+    left: 0
+    transition: all ease-in-out .4s
+  #mobile-navigation
+    left: -206px
+    bottom: 0
+    width: 50%
+    position: fixed
+    background-color: $white
+    height: calc(100% - 58px)
+    box-shadow: 4px 0 14px rgba(0,0,0,.05)
+    z-index: 99
+    transition: all ease-in-out .4s
+    .close-this
+      float: right
+      margin-top: 5px
+      margin-right: 6px
+      padding: 10px 15px
+      background-color: #eef2f9
+      color: #bbbfcc
+      border-radius: 4px
+    ul
+      margin: 0
+      padding: 0
+      height: 100%
+      li
+        list-style: none
+        a
+          width: 100%
+          padding: 10px 15px
+          font-size: 20px
+          color: $grey-dark-1
+          display: inline-block
+          position: relative
+          span
+            display: inline-block
+            position: relative
+            bottom: 2px
+            margin-left: 10px
+            font-size: 14px
+            font-weight: 300
+          &:hover
+            text-decoration: none
+        .active
+          background-color: $grey-light
+          color: $purple
+          span
+            color: $grey-text
+            font-weight: 500
+      .last
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+
+  /* Maincontent
+  /* ==================================
+  #main-content
+    padding: 20px
+    width: 100%
+    margin-left: 0
+    #main-row
+      ul
+        li
+      .board-selection
+        li
+          font-size: 20px
+          .main-active
+          span.toggle-menu
+            width: 26px
+            height: 26px
+      .no-mobile
+        display: none
+      .mobile-team-menu
+        display: inline-block
+        float: right
+        button
+          background-color: $grey-light
+          border: transparent
+          color: $grey-dark-1
+          i.fa
+            position: relative
+            top: 1px
+            margin-left: 5px
+        ul.open
+          display: inline-block
+        ul
+          display: none
+          margin: 0
+          padding: 0
+          position: absolute
+          background-color: $white
+          right: 0
+          z-index: 999
+          border-radius: 4px
+          box-shadow: 2px 2px 2px rgba(0,0,0,.1)
+          margin-top: 5px
+          li
+            list-style: none
+            display: block
+            padding: 5px 15px
+            .profile-pic
+              border-radius: 50%
+              height: 20px
+              width: 20px
+              margin-right: 5px
+              overflow: hidden
+              position: relative
+              display: inline-table
+              img
+                width: 100%
+                max-height: 20px
+            span
+              position: relative
+              bottom: -1px
+            a
+              display: inline-block
+              color: $purple
+            .add-team
+              i.fa
+                margin-left: 10px
+            &:last-child
+              border-top: 1px solid $grey-background
+
+    /* ==================================
+    /* Board
+    /* ==================================
+    #sprint-row
+      .mobile-menu
+        display: inline-block
+        margin-right: 5px
+        background-color: #f6f8fc
+        padding: 7px 12px
+        border-radius: 4px
+        color: #b9bfc9
+        -webkit-transition: all ease-in-out 0.2s
+        -o-transition: all ease-in-out 0.2s
+        transition: all ease-in-out 0.2s
+    #board
+      .row
+        .col-md-3.ui-sortable
+          min-height: 400px
+          margin-bottom: 20px
+        .col-md-3
+          .board-column
+            .modal
+              min-width: 100%
+              height: auto
+              box-shadow: -5px -8px 29px rgba(0, 0, 0, 0.3)
+              .modal-header
+                .card-issue-id
+                  display: inline-block
+                  color: $white
+                  font-size: 12px
+                  background-color: $grey-soft
+                  border-radius: 3px
+                  padding: 2px 4px
+              .modal-body
+                padding: 0 15px 15px 15px
+                .status-row
+                  display: block
+                  padding: 8px 15px
+                  background-color: $grey-light
+                  margin: 0 -15px 20px -15px
+                  span
+                    margin-right: 10px
+                    color: $grey-dark-1
+                    i
+                      margin-right: 5px
+                  .timer-estimate
+                  .time-remaining
+                  .status
+                    padding: 2px 4px
+                    color: $white
+                    border-radius: 3px
+                  .in-progress
+                    background: $orange-gradient
+              .modal-footer
+                .btn-primary
+                  background: $blue
+                  border: none
+                  color: $white
+            ul.cards
+              .modal
+                min-width: 100%
+                height: auto
+                box-shadow: -5px -8px 29px rgba(0, 0, 0, 0.3)
+                .modal-header
+                  .card-issue-id
+                    display: inline-block
+                    color: $white
+                    font-size: 12px
+                    background-color: $grey-soft
+                    border-radius: 3px
+                    padding: 2px 4px
+                .modal-body
+                  padding: 0 15px 15px 15px
+                  .status-row
+                    display: block
+                    padding: 8px 15px
+                    background-color: $grey-light
+                    margin: 0 -15px 20px -15px
+                    span
+                      margin-right: 10px
+                      color: $grey-dark-1
+                      i
+                        margin-right: 5px
+                    .timer-estimate
+                    .time-remaining
+                    .status
+                      padding: 2px 4px
+                      color: $white
+                      border-radius: 3px
+                    .in-progress
+                      background: $orange-gradient
+                .modal-footer
+                  .btn-primary
+                    background: $blue
+                    border: none
+                    color: $white
+              .ui-state-highlight
+                border-radius: 4px
+                padding: 8px
+                background: $striped
+                margin-bottom: 10px
+                list-style: none
+                min-height: 113px
+                border: none
+              li.card
+                list-style: none
+                border-radius: 4px
+                padding: 8px
+                background-color: $white
+                margin-bottom: 10px
+                cursor: pointer
+                &:hover
+                  box-shadow: 0 2px 2px rgba(0,0,0,.1)
+                .card-header
+                  display: inline-block
+                  position: relative
+                  width: 100%
+                  border-bottom: 1px solid $grey-light
+                  padding-bottom: 5px
+                  .low
+                    background-color: $blue
+                  .med
+                    background: $green-gradient
+                  .high
+                    background: $purple-gradient
+                  .card-edit
+                    display: inline-block
+                    float: right
+                    color: $grey-soft
+                    padding: 0 5px
+                    border-radius: 3px
+                    transition: $fast
+                    &:hover
+                      color: $grey-dark-1
+                      background-color: $grey-light
+                      transition: $fast
+                    &:active, &:focus
+                      outline: none
+                      background-color: $grey-light
+                      color: $grey-dark-1
+                  .card-label
+                    color: $white
+                    border-radius: 3px
+                    text-align: center
+                    padding: 3px 10px
+                    display: inline-block
+                    font-size: 12px
+                    margin-right: 10px
+                    float: left
+                  .card-title
+                    float: left
+                    font-size: 18px
+                .card-description
+                  margin: 17px 0
+                .card-row
+                  color: $grey-soft
+                  .card-comments
+                    display: inline-block
+                    margin-right: 15px
+                    i.fa
+                      margin-right: 5px
+                  .card-hours
+                    display: inline-block
+                    i.fa
+                      margin-right: 5px
+                  .card-issue-id
+                    display: inline-block
+                    margin-left: 15px
+                    color: $white
+                    font-size: 12px
+                    background-color: $grey-soft
+                    border-radius: 3px
+                    padding: 2px 4px
+                  .card-team
+                    display: inline-block
+                    position: relative
+                    bottom: 10px
+                    float: right
+                    ul
+                      display: inherit
+                      margin: 0
+                      padding: 0
+                      li
+                        list-style: none
+                        width: 30px
+                        height: 30px
+                        overflow: hidden
+                        text-align: center
+                        position: relative
+                        border-radius: 50%
+                        display: inline-block
+                        img
+                          width: 100%
+                      .add
+                        border: 1px solid $grey-soft
+                        color: $grey-soft
+                        margin-right: 6px
+                        &:before
+                          content: "+"
+                          text-align: center
+                          font-size: 26px
+                          font-weight: 100
+                          position: relative
+                          bottom: 4px
+            .add-task
+              color: $grey-soft
+              padding: 21px 0
+              text-align: center
+              font-size: 18px
+              i.fa
+                margin-left: 10px

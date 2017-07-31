@@ -1,0 +1,671 @@
+@import "arrays.sass"
+
+/* ==================================
+/* Header
+/* ==================================
+#navigation-bar
+  background-color: $purple
+  display: inline-block
+  width: 100%
+  position: fixed
+  color: $white
+  padding: 0 0 0 130px
+  height: 58px
+  z-index: 99999999
+  .logo
+    background-color: $purple-dark
+    display: inline-block
+    padding: 18px
+    font-size: 16px
+    font-weight: 700
+    position: absolute
+    top: 0
+    left: 0
+    min-width: 130px
+    text-align: center
+    .logo-text
+    img.logo-view
+  form.search-bar
+    display: inline-block
+    &:before
+      content: "\f002"
+      font-family: FontAwesome
+      font-weight: 100
+      font-size: 18px
+      position: absolute
+      top: 50%
+      transform: translateY(-60%)
+      margin-left: 20px
+    #search-bar
+      padding: 19px 0 19px 50px
+      border: none
+      background-color: transparent
+      color: $white
+      width: 200px
+      transition: $standard
+    input
+      transition: $standard
+      &::-webkit-input-placeholder
+        color: rgba(255,255,255,.5)
+        transition: $standard
+      &:focus, &:active
+        outline: none
+        background-color: rgba(255,255,255,.1) !important
+        transition: $standard
+        width: 500px !important
+        &::-webkit-input-placeholder
+          color: rgba(255,255,255,1)
+          transition: $standard
+  ul.right-navigation
+    float: right
+    display: block
+    position: relative
+    margin: 0
+    padding: 0
+    max-height: 58px
+    li
+      list-style: none
+      display: inline-block
+      &:nth-child(1)
+        margin-right: -4px
+      a
+        position: relative
+        padding: 18px 20px
+        color: $white
+        font-size: 16px
+        display: inherit
+        background-color: rgba(255,255,255,.0)
+        transition: $standard
+        &:hover
+          background-color: rgba(255,255,255,.1)
+          transition: $standard
+          text-decoration: none
+        i.fa
+        span
+          position: absolute
+          font-size: 9px
+          background: $green-gradient
+          border-radius: 50%
+          width: 15px
+          height: 15px
+          text-align: center
+          padding: 2px 0
+          top: 10px
+          right: 12px
+          box-shadow: 1px 2px 2px rgba(0,0,0,.1)
+      &:nth-child(2)
+        border-left: 1px solid $white
+        border-right: 1px solid $white
+    li.profile-menu
+      padding: 0 22px
+      .profile-pic
+        border-radius: 50%
+        position: relative
+        bottom: 12px
+        height: 40px
+        width: 40px
+        float: right
+        overflow: hidden
+        margin-left: 22px
+        img
+          width: 100%
+
+/* ==================================
+/* Sidebar
+/* ==================================
+#sidebar-navigation
+  float: left
+  display: inline-block
+  width: 130px
+  z-index: 1041
+  left: 0
+  height: calc(100vh - 58px)
+  background-color: $white
+  box-shadow: 2px 0 14px rgba(0,0,0,.1)
+  margin-top: 58px
+  position: fixed
+  transition: all ease-in-out .4s
+  ul
+    margin: 0
+    padding: 0
+    height: 100%
+    li
+      list-style: none
+      a
+        width: 100%
+        padding: 43px 0
+        font-size: 24px
+        color: $grey-dark-1
+        text-align: center
+        display: inline-block
+        position: relative
+        span
+          display: block
+          font-size: 14px
+          font-weight: 300
+        &:hover
+          text-decoration: none
+          background-color: $grey-light
+      .active
+        background-color: $grey-light
+    .last
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+
+
+/* ==================================
+/* Maincontent
+/* ==================================
+#main-content
+  float: left
+  padding: 40px
+  width: calc(100% - 130px)
+  margin-left: 130px
+  margin-top: 58px
+  transition: all ease-in-out .4s
+  #main-row
+    display: block
+    position: relative
+    margin-bottom: 40px
+    ul
+      margin: 0
+      padding: 0
+      display: inline-block
+      li
+        list-style: none
+        display: inline-block
+    .board-selection
+      li
+        font-size: 26px
+        z-index: 2
+        .main-active
+          z-index: 2
+          display: inline-block
+          position: relative
+        span.toggle-menu
+          border-radius: 4px
+          width: 35px
+          height: 35px
+          position: relative
+          text-align: center
+          display: inline-block !important
+          background-color: transparent
+          color: $purple
+          margin-left: 18px
+          transition: $standard
+          z-index: 2
+          &:after
+            content: "\f107"
+            font-family: FontAwesome
+            position: relative
+          &:hover
+            cursor: pointer
+            background-color: $grey-light
+            transition: $standard
+        span.toggle-menu.menu-open
+          background-color: $grey-light
+          &:after
+            content: "\f106"
+            bottom: 2px
+        ul.dropdown-menu-default.active
+          display: inline-block !important
+        ul.dropdown-menu-default
+          margin: 0
+          padding: 55px 0 0 0
+          background-color: #ffffff
+          position: absolute
+          display: none
+          border-radius: 4px
+          z-index: 1
+          top: -8px
+          left: -8px
+          box-shadow: 2px 2px 2px rgba(0,0,0,.1)
+          width: 220px
+          li
+            list-style: none
+            display: block
+            a
+              padding: 11px 10px
+              font-size: 16px
+              color: $grey-dark-1
+              display: block
+              width: 220px
+              background: transparent
+              transition: $standard
+              &:before
+                content: "\f105"
+                font-family: FontAwesome
+                color: $blue
+                margin-right: 10px
+                position: relative
+                font-size: 14px
+                bottom: 1px
+                transition: $standard
+              &:hover
+                text-decoration: none
+                background: $grey-background
+                transition: $standard
+                &:before
+                  transition: $standard
+    .team-selection
+      float: right
+      li
+        position: relative
+        border-radius: 50%
+        width: 50px
+        height: 50px
+        overflow: hidden
+        margin-left: 10px
+        img
+          width: 100%
+      li.selection
+        border: 1px solid $grey-soft
+        color: $grey-soft
+        text-align: center
+        &:before
+          content: "+"
+          text-align: center
+          font-size: 38px
+          font-weight: 100
+          position: relative
+          bottom: 4px
+
+
+  /* ==================================
+  /* Sprint row
+  /* ==================================
+  #sprint-row
+    position: relative
+    display: block
+    margin-bottom: 15px
+    .close-menu
+      display: inline-block
+      margin-right: 5px
+      background-color: $grey-light
+      padding: 7px 12px
+      border-radius: 4px
+      color: $grey-dark-1
+      transition: $standard
+      &:hover
+        background-color: transparent
+        cursor: pointer
+        transition: $standard
+      i.fa
+        position: relative
+        transform: rotate(0)
+        transition: $standard
+    .active
+      i.fa
+        transform: rotate(180deg)
+        transition: $standard
+    button
+      background-color: $grey-light
+      border-color: $grey-light
+      color: $grey-dark-1
+      transition: $standard
+      &:hover
+        background-color: transparent
+        border-color: transparent
+        transition: $standard
+    .sprint
+      display: inline-block
+      ul
+        overflow: hidden
+        border: transparent
+        margin-top: 5px
+        li
+          a
+            padding: 5px 12px
+          .done
+            cursor: default
+            background-color: #e5fff8
+            color: #b8e2d6
+            &:hover
+              background-color: #e5fff8
+              color: #b8e2d6
+            &:nth-child(1)
+              &:before
+                content: ""
+                width: 100%
+                height: 5px
+                position: absolute
+                top: 0
+                left: 0
+                background-color: #e5fff8
+            &:last-child
+              &:hover
+                &:before
+                  content: ""
+                  width: 100%
+                  height: 5px
+                  position: absolute
+                  bottom: 0
+                  left: 0
+                  background-color: #e5fff8
+    button#roadmap-toggle
+      display: inline-block
+      float: right
+
+  /* ==================================
+  /* Board
+  /* ==================================
+  #board
+    .row
+      .col-md-3.ui-sortable
+        min-height: 737px
+      .col-md-3
+        .purple
+          &:before
+            content: ""
+            background: $purple-gradient
+            position: absolute
+            width: 100%
+            left: 0
+            top: 0
+            height: 4px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+        .orange
+          &:before
+            content: ""
+            background: $orange-gradient
+            position: absolute
+            width: 100%
+            left: 0
+            top: 0
+            height: 4px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+        .blue
+          &:before
+            content: ""
+            background: $blue
+            position: absolute
+            width: 100%
+            left: 0
+            top: 0
+            height: 4px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+        .green
+          &:before
+            content: ""
+            background: $green-gradient
+            position: absolute
+            width: 100%
+            left: 0
+            top: 0
+            height: 4px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+        .ui-state-highlight
+          border-radius: 4px
+          padding: 8px
+          border: 2px dashed $grey-dark-1
+          background: transparent
+          margin-bottom: 10px
+          list-style: none
+          min-height: 700px
+        .board-column
+          border-radius: 4px
+          background-color: $grey-light
+          box-shadow: 0 0 14px rgba(0,0,0,.1)
+          padding: 10px
+          position: relative
+          .header
+            font-size: 18px
+            position: relative
+            display: block
+            min-height: 25px
+            margin-bottom: 15px
+            margin-top: 8px
+            .menu-icon
+              float: right
+              padding-right: 10px
+              span
+                background-color: $grey-text
+                position: absolute
+                width: 3px
+                height: 3px
+                &:nth-child(1)
+                  top: 6px
+                &:nth-child(2)
+                  top: 50%
+                  transform: translateY(-50%)
+                &:nth-child(3)
+                  bottom: 5px
+          ul.cards
+            margin: 0
+            padding: 0
+            min-height: 50px
+            .modal
+              left: auto !important
+              top: auto !important
+              bottom: 0
+              right: 0
+              width: 25%
+              min-width: 500px
+              height: calc(100vh - 58px)
+              background-color: $white
+              box-shadow: -5px 0 29px rgba(0,0,0,.3)
+              padding-right: 0 !important
+              .modal-header
+                .card-issue-id
+                  display: inline-block
+                  color: $white
+                  font-size: 12px
+                  background-color: $grey-soft
+                  border-radius: 3px
+                  padding: 2px 4px
+                  position: relative
+                  bottom: 2px
+              .modal-body
+                padding: 0 15px 15px 15px
+                .edit-row
+                  display: block
+                  padding: 15px 0
+                  button
+                    display: inline-block
+                  .edit
+                    position: relative
+                    background-color: $grey-background
+                    border-color: $grey-background
+                    color: $grey-dark-1
+                    &:hover
+                      background-color: $grey-soft
+                  .dropdown
+                    display: inline-block
+                    button
+                      background-color: $grey-background
+                      border-color: $grey-background
+                      color: $grey-dark-1
+                      &:hover
+                        background-color: $grey-soft
+                    ul
+                      border-color: $grey-background
+                      li
+                        a
+                          color: #9e9e9e
+                          &:hover
+                            background-color: $grey-background
+                          i.fa
+                            float: right
+                            position: relative
+                            top: 3px
+                            color: $blue
+                .status-row
+                  display: block
+                  padding: 8px 15px
+                  background-color: $grey-light
+                  margin: 0 -15px 20px -15px
+                  span
+                    margin-right: 10px
+                    color: $grey-dark-1
+                    i
+                      margin-right: 5px
+                  .timer-estimate
+                  .time-remaining
+                  .status
+                    padding: 2px 4px
+                    color: $white
+                    border-radius: 3px
+                  .in-progress
+                    background: $orange-gradient
+              .modal-footer
+                .btn-primary
+                  background: $blue
+                  border: none
+                  color: $white
+            .ui-state-highlight
+              border-radius: 4px
+              padding: 8px
+              background: $striped
+              margin-bottom: 10px
+              list-style: none
+              min-height: 113px
+              border: none
+            li.card
+              list-style: none
+              border-radius: 4px
+              padding: 8px
+              background-color: $white
+              margin-bottom: 10px
+              cursor: pointer
+              &:hover
+                box-shadow: 0 2px 2px rgba(0,0,0,.1)
+              .card-header
+                display: inline-block
+                position: relative
+                width: 100%
+                border-bottom: 1px solid $grey-light
+                padding-bottom: 5px
+                .low
+                  background-color: $blue
+                .med
+                  background: $green-gradient
+                .high
+                  background: $purple-gradient
+                .card-edit
+                  display: inline-block
+                  float: right
+                  color: $grey-soft
+                  padding: 0 5px
+                  border-radius: 3px
+                  transition: $fast
+                  &:hover
+                    color: $grey-dark-1
+                    background-color: $grey-light
+                    transition: $fast
+                  &:active, &:focus
+                    outline: none
+                    background-color: $grey-light
+                    color: $grey-dark-1
+                .card-label
+                  color: $white
+                  border-radius: 3px
+                  text-align: center
+                  padding: 3px 10px
+                  display: inline-block
+                  font-size: 12px
+                  margin-right: 10px
+                  float: left
+                .card-title
+                  float: left
+                  font-size: 18px
+              .card-description
+                margin: 17px 0
+              .card-row
+                color: $grey-soft
+                .card-comments
+                  display: inline-block
+                  margin-right: 15px
+                  i.fa
+                    margin-right: 5px
+                .card-hours
+                  display: inline-block
+                  i.fa
+                    margin-right: 5px
+                .card-issue-id
+                  display: inline-block
+                  margin-left: 15px
+                  color: $white
+                  font-size: 12px
+                  background-color: $grey-soft
+                  border-radius: 3px
+                  padding: 2px 4px
+                .card-team
+                  display: inline-block
+                  position: relative
+                  bottom: 10px
+                  float: right
+                  ul
+                    display: inherit
+                    margin: 0
+                    padding: 0
+                    li
+                      list-style: none
+                      width: 30px
+                      height: 30px
+                      overflow: hidden
+                      text-align: center
+                      position: relative
+                      border-radius: 50%
+                      display: inline-block
+                      img
+                        width: 100%
+          .add-task
+            display: block
+            color: $grey-soft
+            padding: 21px 0
+            text-align: center
+            font-size: 18px
+            border-radius: 4px
+            i.fa
+              margin-left: 10px
+            &:hover
+              background-color: $grey-background
+              text-decoration: none
+
+.task-modal
+  background-color: $white
+  left: auto
+  top: auto
+  bottom: 0
+  right: 0
+  width: 25%
+  min-width: 500px
+  height: calc(100vh - 58px)
+  box-shadow: -5px 0 29px rgba(0,0,0,.3)
+  .modal-header
+    .card-issue-id
+      display: inline-block
+      color: $white
+      font-size: 12px
+      background-color: $grey-soft
+      border-radius: 3px
+      padding: 2px 4px
+      .status-row
+        display: block
+        padding: 8px 15px
+        background-color: $grey-light
+        margin: 0 -15px 20px -15px
+        span
+          margin-right: 10px
+          color: $grey-dark-1
+          i
+            margin-right: 5px
+        .timer-estimate
+        .time-remaining
+        .status
+          padding: 2px 4px
+          color: $white
+          border-radius: 3px
+        .in-progress
+          background: $orange-gradient
+    .modal-footer
+      .btn-primary
+        background: $blue
+        border: none
+        color: $white

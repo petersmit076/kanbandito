@@ -1,0 +1,22 @@
+@import "arrays.sass"
+
+body
+  margin: 0
+  background-color: $grey-background
+  font-family: 'Roboto', sans-serif
+  color: $grey-text
+  .modal-backdrop
+    width: 100%
+    height: calc(100vh - 58px)
+    top: auto !important
+    left: auto !important
+  .modal-backdrop.in
+    opacity: .2
+
+.hide-nav
+  left: -130px !important
+  transition: all ease-in-out .4s
+#main-content.hide-nav
+  left: auto
+  width: 100%
+  margin-left: 0
