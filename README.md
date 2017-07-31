@@ -13,3 +13,10 @@ So I want create my own project planning app.
 Not because I need to (there are alternatives to Jira) but because I want to, I want build a real cool, easy to use open source
 project planning app.
 Everyone who is willing to contribute is appreciated!
+
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-1.jpg)
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-2.jpg)
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-3.jpg)
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-4.jpg)
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-5.jpg)
+![alt text](https://github.com/petersmit076/kanbandito/blob/master/kanbandito-6.jpg)
